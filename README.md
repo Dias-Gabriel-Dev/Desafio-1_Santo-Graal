@@ -1,73 +1,197 @@
-# React + TypeScript + Vite
+# Desafio 1 — Santo Graal
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Visão geral
 
-Currently, two official plugins are available:
+Este desafio consiste em construir uma interface responsiva baseada no padrão **Holy Grail Layout**, utilizando tecnologias modernas de frontend.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Esse layout possui um **conteúdo principal com duas barras laterais, header e footer**, onde os elementos devem **se reorganizar ou colapsar em telas menores**.
 
-## React Compiler
+![Exemplo Holy Grail](./examples/holy-grail.png)
 
-The React Compiler is currently not compatible with SWC. See [this issue](https://github.com/vitejs/vite-plugin-react/issues/428) for tracking the progress.
+O nome "Santo Graal" surgiu porque esse layout era historicamente difícil de implementar antes da existência de **Flexbox** e **CSS Grid**.
 
-## Expanding the ESLint configuration
+Hoje ele é comum em aplicações como:
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+* dashboards
+* portais de documentação
+* painéis administrativos
+* fóruns e comunidades
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+---
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+# Referência visual
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+Abaixo estão exemplos de interfaces que utilizam esse padrão.
+
+![Exemplo LinkedIn](./examples/linkedin.jpg)
+
+![Exemplo Reddit](./examples/reddit.png)
+
+![Exemplo Mozilla](./examples/mozilla.png)
+
+![Exemplo NestJS](./examples/nest-js.png)
+
+---
+
+# Stack obrigatória
+
+A implementação deve utilizar:
+
+* **React**
+* **Vite**
+* **TypeScript**
+* **Tailwind CSS**
+
+Este repositório já fornece um projeto inicial com **React + Vite + TypeScript**.
+
+O participante deve instalar e configurar **Tailwind CSS** seguindo a documentação oficial:
+
+[https://tailwindcss.com/docs/installation](https://tailwindcss.com/docs/installation)
+
+---
+
+# Objetivo
+
+Construir uma interface responsiva inspirada em aplicações reais que utilizam o padrão **Holy Grail Layout**.
+
+---
+
+# Estrutura obrigatória
+
+A interface deve conter claramente:
+
+* **Header**
+* **Duas barras laterais**
+* **Conteúdo principal**
+* **Footer**
+
+Recomenda-se o uso de elementos semânticos:
+
+* `header`
+* `nav`
+* `main`
+* `aside`
+* `footer`
+
+---
+
+# Responsividade
+
+O layout deve funcionar corretamente em diferentes tamanhos de tela.
+
+### Desktop
+
+Todas as regiões devem aparecer simultaneamente.
+
+### Mobile
+
+* o **conteúdo principal deve ter prioridade**
+* as barras laterais devem se adaptar ou colapsar
+* não deve existir **scroll horizontal causado por layout quebrado**
+
+Menu mobile (hamburger/drawer) é **opcional**, mas recomendado.
+
+---
+
+# Requisitos obrigatórios
+
+Para aprovação no desafio:
+
+* Implementar o layout Holy Grail
+* Interface **responsiva**
+* Utilizar **React + Vite + TypeScript**
+* Utilizar **Tailwind CSS**
+* Ter **componentização básica**
+* O projeto deve compilar (`npm run build`)
+
+---
+
+# Melhorias opcionais
+
+Os itens abaixo não são obrigatórios, mas aumentam a qualidade da solução:
+
+* sidebar colapsável
+* menu mobile
+* conteúdo real simulando uma aplicação
+* header ou sidebar fixos
+* boa hierarquia visual
+* componentes reutilizáveis
+* estados de hover e focus
+* boa organização do código
+
+---
+
+# Como desenvolver e entregar
+
+## 1. Faça um fork do repositório
+
+Clique em **Fork** no topo desta página para criar uma cópia do repositório na sua conta do GitHub.
+
+Depois clone o seu fork:
+
+```bash
+git clone https://github.com/seu-usuario/nome-do-repo.git
+cd nome-do-repo
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+---
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## 2. Configure o projeto
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+Instale as dependências:
+
+```bash
+npm install
 ```
+
+Depois instale e configure **Tailwind CSS** seguindo a documentação oficial:
+
+[https://tailwindcss.com/docs/installation](https://tailwindcss.com/docs/installation)
+
+---
+
+## 3. Desenvolva a interface
+
+Implemente o layout seguindo os requisitos do desafio.
+
+A aplicação deve conter:
+
+* Header
+* Duas barras laterais
+* Conteúdo principal
+* Footer
+
+O layout deve ser **responsivo**.
+
+Durante o desenvolvimento, rode:
+
+```bash
+npm run dev
+```
+
+Antes de enviar, verifique se o projeto compila:
+
+```bash
+npm run build
+```
+
+---
+
+## 4. Faça o deploy
+
+Publique sua aplicação em uma plataforma como:
+
+* Vercel
+* Netlify
+
+---
+
+## 5. Envie sua solução
+
+Abra um **Pull Request do seu fork para este repositório**, contendo:
+
+* Link do **repositório do seu fork**
+* Link da **aplicação em produção**
+* Screenshots do layout em **desktop e mobile**
+
+Após o envio, sua solução será revisada. Feedback poderá ser fornecido antes da aprovação.

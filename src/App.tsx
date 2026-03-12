@@ -1,7 +1,7 @@
 export default function App() {
   return (
     <div style={{textAlign: 'center'}}>
-      Agile RiseUp — Challenge 1 - Holy Grail
+      Agile RiseUp — Desafio 1 - Santo Graal
     </div>
   )
 }
